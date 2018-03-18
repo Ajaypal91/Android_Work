@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.Map;
 
 import edu.sjsu.ajay.whatsfordinner.Entities.Groceries;
+import edu.sjsu.ajay.whatsfordinner.Entities.Meals;
 import edu.sjsu.ajay.whatsfordinner.Entities.NewRecipe;
 import edu.sjsu.ajay.whatsfordinner.R;
 
@@ -143,5 +144,47 @@ public class GetSaveData {
 
     }
 
+    public static void SaveMeals(Context context, Meals data){
+
+        String fileName = context.getResources().getString(R.string.mealsFile);
+        FileOutputStream fileStream;
+        ObjectOutputStream oStrm;
+
+        try{
+
+            fileStream = new FileOutputStream(context.getFilesDir().getPath()+fileName);
+            oStrm = new ObjectOutputStream(fileStream);
+            oStrm.writeObject(data);
+            oStrm.close();
+            fileStream.close();
+        }
+        catch (Exception e){
+            Log.i(TAG,"GetSaveData - SAVE:cannot save the data");
+            e.printStackTrace();
+        }
+
+    }
+
+    public static Meals readMeals(Context context){
+
+        String fileName = context.getResources().getString(R.string.mealsFile);
+        FileInputStream fileStream;
+        ObjectInputStream oStrm;
+        Meals result = null;
+
+        try{
+            fileStream = new FileInputStream(context.getFilesDir().getPath()+fileName);
+            oStrm = new ObjectInputStream(fileStream);
+            result = (Meals) oStrm.readObject();
+            oStrm.close();
+            fileStream.close();
+        }
+        catch (Exception e){
+            Log.i(TAG,"GetSaveData - read: Cannot read the data");
+            e.printStackTrace();
+        }
+
+        return result;
+    }
 
 }

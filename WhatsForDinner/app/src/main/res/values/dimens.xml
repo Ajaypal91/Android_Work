@@ -1,4 +1,6 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="hintText">18dp</dimen>
+    <dimen name="days">32dp</dimen>
+    <dimen name="meals">22dp</dimen>
 </resources>

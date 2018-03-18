@@ -4,6 +4,7 @@
     <string name="recipeName">Enter Recipe Name</string>
     <string name="copyRight">Copyright \u00A9 All rights reserved</string>
     <string name="databaseFile">savedData.dat</string>
+    <string name="mealsFile">savedMeals.dat</string>
     <string name="groceriesFile">groceriesData.dat</string>
     <string name="addIngredient">Item</string>
     <string name="duplicateRecipe">Recipe already exists</string>

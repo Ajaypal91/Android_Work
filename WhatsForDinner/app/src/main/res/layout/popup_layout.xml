@@ -49,7 +49,7 @@
                 android:layout_height="wrap_content"
                 android:autoLink="web"
                 android:textColor="@android:color/white"
-                android:text="Help: https://github.com/kotoran/WhatsForDinner/blob/master/app/src/main/res/drawable/add_icon.png"
+                android:text="Help: https://github.com/Ajaypal91/Android_Work/tree/updates/WhatsForDinner"
                 android:textAlignment="center" />
 
         </TableRow>
