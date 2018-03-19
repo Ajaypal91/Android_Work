@@ -1,7 +1,9 @@
 package edu.sjsu.ajay.whatsfordinner;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.telecom.Call;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -21,6 +23,7 @@ import java.util.Objects;
 import java.util.Set;
 
 import edu.sjsu.ajay.whatsfordinner.Entities.Meals;
+import edu.sjsu.ajay.whatsfordinner.Entities.MealsToDisplay;
 import edu.sjsu.ajay.whatsfordinner.Entities.NewRecipe;
 import edu.sjsu.ajay.whatsfordinner.HelperMethods.GetSaveData;
 import edu.sjsu.ajay.whatsfordinner.HelperMethods.Helpers;
@@ -103,6 +106,7 @@ public class MealsActivity extends AppCompatActivity {
             int i = mealForday.lastIndexOf(newselectedMeal);
             mealForday.remove(i);
             mealForday.add(0,newselectedMeal);
+            updateAdaptersBasedOnDay(currDay);
         }
 
         //if new meal is Eating Out
@@ -129,7 +133,7 @@ public class MealsActivity extends AppCompatActivity {
 
             updateMealsCalenderForOther2Meals(previousMeal, index, currDay);
         }
-       
+
         setAdapters();
     }
 
@@ -196,7 +200,7 @@ public class MealsActivity extends AppCompatActivity {
                     break;
             }
 
-            if(lst.contains(val)) {
+//            if(lst.contains(val)) {
                 if(!val.equals(Meals.defaultMeal)){
                     List<String> mealsUsed = usedMeals.get(d.toLowerCase());
                     Map<String,Integer> mealUsedMap = usedMealsMap.get(d.toLowerCase());
@@ -207,10 +211,14 @@ public class MealsActivity extends AppCompatActivity {
                     else
                         mealUsedMap.put(val, mealUsedMap.get(val)+1);
                 }
-                int i = lst.lastIndexOf(val);
-                lst.remove(i);
-            }
-            lst.add(0,val);
+                else{
+                    int i = lst.lastIndexOf(val);
+                    lst.remove(i);
+                }
+//                int i = lst.lastIndexOf(val);
+//                lst.remove(i);
+//            }
+                lst.add(0,val);
         }
 
         updateAdaptersBasedonUsedMeals();
@@ -331,13 +339,16 @@ public class MealsActivity extends AppCompatActivity {
     public List<String> getRecipesList(){
 
         //change this
-        List<String> lst = new ArrayList<>(Arrays.asList(new String[]{"Recipe 1", "Recipe 2", "Recipe 1"}));
+//        List<String> lst = new ArrayList<>(Arrays.asList(new String[]{"Recipe 1", "Recipe 2", "Recipe 1"}));
+        MealsToDisplay meals = GetSaveData.readMealsToDisplay(this);
+        if (meals == null)
+            meals = new MealsToDisplay();
+        List<String> res = meals.getMeals();
 //        List<String> result = new ArrayList<>();
 //        for(NewRecipe n : lst){
 //            result.add(n.getRecipeName());
 //        }
-
-        return lst;
+        return res;
     }
 
     public void updateMealData(String day, String breakfastVal, String lunchVal, String dinnerVal){
@@ -423,5 +434,22 @@ public class MealsActivity extends AppCompatActivity {
 
         Toast.makeText(this,"Meals Saved for the day!",Toast.LENGTH_LONG).show();
 
+    }
+
+    public void nutrition_planer_click(View view){
+        Intent intent=new Intent(this,NutritionActivity.class);
+        startActivityForResult(intent, 2);
+    }
+
+    // Call Back method  to get the Message form other Activity
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data)
+    {
+        super.onActivityResult(requestCode, resultCode, data);
+        // check if the request code is same as what is passed  here it is 2
+        if(requestCode==2)
+        {
+            Toast.makeText(this,"Bundle recieved",Toast.LENGTH_LONG).show();
+        }
     }
 }

@@ -125,7 +125,7 @@ public class NewDishActivity extends AppCompatActivity {
         if(requestCode == PICK_IMAGE && resultCode == RESULT_OK && data != null && data.getData() != null){
 
             Uri uri = data.getData();
-            imagePath = uri.getPath();
+            imagePath = uri.toString();
             InputStream inputStream;
             try{
 
@@ -196,19 +196,20 @@ public class NewDishActivity extends AppCompatActivity {
         List<String> ingredients = getIngredients(getIngredientsListView());
         String directions = ((EditText)findViewById(R.id.directions)).getText().toString().trim();
         NewRecipe newRecipe = new NewRecipe(recipeName,imagePath,ingredients,directions);
-        Groceries groceries = GetSaveData.getGroceriesList(this);
-        if(groceries == null)
-            groceries = new Groceries();
+
+//        Groceries groceries = GetSaveData.getGroceriesList(this);
+//        if(groceries == null)
+//            groceries = new Groceries();
 
         //save the new data along with previous one
         List<NewRecipe> data = GetSaveData.read(this);
         if (data == null)
             data = new ArrayList<>();
         data.add(newRecipe);
-        //update the groceries list to buy
-        GetSaveData.updateGroceriesList(this, groceries,newRecipe);
-        //save the groceries list
-        GetSaveData.saveGroceries(this,groceries);
+//        //update the groceries list to buy
+//        GetSaveData.updateGroceriesList(this, groceries,newRecipe);
+//        //save the groceries list
+//        GetSaveData.saveGroceries(this,groceries);
 
         GetSaveData.Save(this, data);
 

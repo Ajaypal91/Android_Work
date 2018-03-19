@@ -125,7 +125,8 @@ public class GroceryActivity extends AppCompatActivity {
             m = itemsToUnitsMap.get(grocery);
         String name = grocery + " ( " + count + " " + m +")";
         stringsToDisplay.remove(position);
-        stringsToDisplay.add(position,name);
+        if(count!=0)
+            stringsToDisplay.add(position,name);
         List<String> temp = new ArrayList<>(stringsToDisplay);
 
         //update the list
@@ -159,12 +160,14 @@ public class GroceryActivity extends AppCompatActivity {
 
         if (count <= 0 ){
             //strike out the element
-            TextView textView = (TextView)adapter.getView(position,null,null);
-            textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-            adapter.notifyDataSetChanged();
+//            TextView textView = (TextView)adapter.getView(position,null,null);
+//            textView.setPaintFlags(textView.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+//            adapter.notifyDataSetChanged();
 
             //delete entry from groceries and save it
             map.remove(grocery);
+            setGroceryNameToDisplayAndUpdateAdapter(grocery,count,position);
+
         }
         else{
             map.put(grocery,count);

@@ -3,4 +3,5 @@
     <dimen name="hintText">18dp</dimen>
     <dimen name="days">32dp</dimen>
     <dimen name="meals">22dp</dimen>
+    <dimen name="icon_size">100dp</dimen>
 </resources>

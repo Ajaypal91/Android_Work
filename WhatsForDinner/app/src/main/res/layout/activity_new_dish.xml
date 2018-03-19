@@ -38,9 +38,9 @@
             <ImageView
                 android:id="@+id/dish_image"
                 android:layout_alignParentLeft="true"
-                android:layout_width="100dp"
+                android:layout_width="@dimen/icon_size"
                 android:scaleType="fitCenter"
-                android:layout_height="100dp"
+                android:layout_height="@dimen/icon_size"
                 android:src="@drawable/burger"/>
 
 

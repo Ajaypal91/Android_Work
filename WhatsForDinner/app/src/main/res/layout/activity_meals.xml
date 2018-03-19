@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="edu.sjsu.ajay.whatsfordinner.MealsActivity">
+    tools:context="edu.sjsu.ajay.whatsfordinner.MealsActivity"
+    android:screenOrientation="portrait">
 
     <RelativeLayout
         android:id="@+id/parent_relative_layout"
@@ -18,7 +19,7 @@
             android:layout_height="wrap_content"
             android:text="MONDAY"
             android:textSize="@dimen/days"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="50dp"
             android:textAlignment="center"
             android:layout_centerHorizontal="true"
             android:textStyle="bold"
@@ -110,6 +111,7 @@
         </RelativeLayout>
 
         <Button
+            android:id="@+id/save_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -118,8 +120,18 @@
             android:background="@color/BLACKCOLOR"
             android:textColor="@color/WHITECOLOR"
             android:textSize="@dimen/fab_margin"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="30dp"
             android:onClick="saveMeal"
+            />
+
+        <Button
+            android:id="@+id/nutrition_planner_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/save_button"
+            android:text="Nutrition PLANNER"
+            android:layout_marginTop="10dp"
+            android:onClick="nutrition_planer_click"
             />
 
     </RelativeLayout>

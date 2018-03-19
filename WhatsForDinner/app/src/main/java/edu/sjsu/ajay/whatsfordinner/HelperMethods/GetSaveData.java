@@ -12,6 +12,7 @@ import java.util.Map;
 
 import edu.sjsu.ajay.whatsfordinner.Entities.Groceries;
 import edu.sjsu.ajay.whatsfordinner.Entities.Meals;
+import edu.sjsu.ajay.whatsfordinner.Entities.MealsToDisplay;
 import edu.sjsu.ajay.whatsfordinner.Entities.NewRecipe;
 import edu.sjsu.ajay.whatsfordinner.R;
 
@@ -22,6 +23,7 @@ import edu.sjsu.ajay.whatsfordinner.R;
 public class GetSaveData {
 
     private static final String TAG = GetSaveData.class.getSimpleName();
+    private static boolean mealsToDisplayFileAvailable = false;
 
     public static void Save(Context context, List<NewRecipe> data){
 
@@ -182,6 +184,52 @@ public class GetSaveData {
         catch (Exception e){
             Log.i(TAG,"GetSaveData - read: Cannot read the data");
             e.printStackTrace();
+        }
+
+        return result;
+    }
+
+    public static void saveMealsToDisplay(Context context, MealsToDisplay data){
+
+        String fileName = context.getResources().getString(R.string.mealsToDisplayFile);
+        mealsToDisplayFileAvailable = true;
+        FileOutputStream fileStream;
+        ObjectOutputStream oStrm;
+
+        try{
+
+            fileStream = new FileOutputStream(context.getFilesDir().getPath()+fileName);
+            oStrm = new ObjectOutputStream(fileStream);
+            oStrm.writeObject(data);
+            oStrm.close();
+            fileStream.close();
+        }
+        catch (Exception e){
+            Log.i(TAG,"GetSaveData - SAVE:cannot save the data");
+            e.printStackTrace();
+        }
+
+    }
+
+    public static MealsToDisplay readMealsToDisplay(Context context){
+
+        String fileName = context.getResources().getString(R.string.mealsToDisplayFile);
+        FileInputStream fileStream;
+        ObjectInputStream oStrm;
+        MealsToDisplay result = null;
+
+        if(!mealsToDisplayFileAvailable)
+            return null;
+
+        try{
+            fileStream = new FileInputStream(context.getFilesDir().getPath()+fileName);
+            oStrm = new ObjectInputStream(fileStream);
+            result = (MealsToDisplay) oStrm.readObject();
+            oStrm.close();
+            fileStream.close();
+        }
+        catch (Exception e){
+            Log.i(TAG,"GetSaveData - read: Cannot read the data");
         }
 
         return result;

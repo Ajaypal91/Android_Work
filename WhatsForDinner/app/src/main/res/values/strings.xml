@@ -5,6 +5,7 @@
     <string name="copyRight">Copyright \u00A9 All rights reserved</string>
     <string name="databaseFile">savedData.dat</string>
     <string name="mealsFile">savedMeals.dat</string>
+    <string name="mealsToDisplayFile">savedMealsToDisplay.dat</string>
     <string name="groceriesFile">groceriesData.dat</string>
     <string name="addIngredient">Item</string>
     <string name="duplicateRecipe">Recipe already exists</string>
@@ -34,4 +35,7 @@
         <item>pieces</item>
         <item>legs</item>
     </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
