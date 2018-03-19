@@ -159,6 +159,45 @@
                     android:hint="Enter directions here"
                     />
 
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/carbs"
+                        android:hint="Carbs"
+                        android:layout_width="70dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"
+                        />
+                    <EditText
+                        android:layout_toRightOf="@id/carbs"
+                        android:id="@+id/calories"
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="70dp"
+                        android:hint="Calorie"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+                    <EditText
+                        android:layout_toRightOf="@id/calories"
+                        android:id="@+id/minerals"
+                        android:layout_marginLeft="15dp"
+                        android:layout_width="70dp"
+                        android:hint="Mineral"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+                    <EditText
+                        android:layout_toRightOf="@id/minerals"
+                        android:id="@+id/vitamins"
+                        android:layout_marginLeft="15dp"
+                        android:hint="Vitamin"
+                        android:layout_width="70dp"
+                        android:layout_height="wrap_content"
+                        android:inputType="numberDecimal"/>
+
+
+                </RelativeLayout>
+
                 <Button
                     android:layout_marginTop="15dp"
                     android:layout_width="match_parent"

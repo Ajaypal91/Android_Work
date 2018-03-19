@@ -174,6 +174,13 @@ public class NewDishActivity extends AppCompatActivity {
 
     public void saveRecipe(View view){
 
+        //get nutitions value
+        String carbs = ((EditText)findViewById(R.id.carbs)).getText().toString();
+        String calories = ((EditText)findViewById(R.id.calories)).getText().toString();
+        String minerals = ((EditText)findViewById(R.id.minerals)).getText().toString();
+        String vitamins = ((EditText)findViewById(R.id.vitamins)).getText().toString();
+
+
         //create the new recipe entity
         String recipeName = ((EditText)findViewById(R.id.recipe_name)).getText().toString();
         if(isDuplicateRecipe || recipeName.isEmpty()){
@@ -196,6 +203,12 @@ public class NewDishActivity extends AppCompatActivity {
         List<String> ingredients = getIngredients(getIngredientsListView());
         String directions = ((EditText)findViewById(R.id.directions)).getText().toString().trim();
         NewRecipe newRecipe = new NewRecipe(recipeName,imagePath,ingredients,directions);
+
+        //set nutrients
+        newRecipe.setCalories(calories);
+        newRecipe.setCarbs(carbs);
+        newRecipe.setMinerals(minerals);
+        newRecipe.setVitamins(vitamins);
 
 //        Groceries groceries = GetSaveData.getGroceriesList(this);
 //        if(groceries == null)
