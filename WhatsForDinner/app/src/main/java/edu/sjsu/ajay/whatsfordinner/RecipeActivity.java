@@ -34,7 +34,7 @@ public class RecipeActivity extends AppCompatActivity implements ListFrag.Recipe
 
     List<NewRecipe> recipes = new ArrayList<>();
 
-    TextView recipeNameView;
+    TextView recipeNameView, carbsView, mineralsView, vitView, caloriesView;
     ListView ingredientListView;
     TextView recipeDescriptionView;
     ImageView foodIconImageView;
@@ -79,6 +79,10 @@ public class RecipeActivity extends AppCompatActivity implements ListFrag.Recipe
         ingredientListView = findViewById(R.id.recipes_screen_ingredientsList);
         recipeDescriptionView = findViewById(R.id.recipes_screen_directions);
         foodIconImageView = findViewById(R.id.recipes_screen_food_icon);
+        caloriesView = findViewById(R.id.calories1);
+        carbsView = findViewById(R.id.carbs1);
+        mineralsView = findViewById(R.id.minerals1);
+        vitView = findViewById(R.id.vitamins1);
     }
 
     @Override
@@ -87,6 +91,8 @@ public class RecipeActivity extends AppCompatActivity implements ListFrag.Recipe
         //in case the portrait mode is selected
         if(findViewById(R.id.recipes_layout_portrait) != null){
 
+            int calories= 0, carbs= 0, minerals = 0, vitamins = 0;
+
             //save the data for the groceries menu
             Groceries groceries = GetSaveData.getGroceriesList(this);
 
@@ -94,6 +100,12 @@ public class RecipeActivity extends AppCompatActivity implements ListFrag.Recipe
                 groceries = new Groceries();
 
             NewRecipe newRecipe = recipes.get(index);
+
+            //get nutritions
+            carbs = Integer.parseInt(newRecipe.getCarbs());
+            vitamins = Integer.parseInt(newRecipe.getVitamins());
+            minerals = Integer.parseInt(newRecipe.getMinerals());
+            calories = Integer.parseInt(newRecipe.getCalories());
 
             //update the groceries list to buy
             GetSaveData.updateGroceriesList(this, groceries,newRecipe);
@@ -107,6 +119,12 @@ public class RecipeActivity extends AppCompatActivity implements ListFrag.Recipe
             if (meals == null)
                 meals = new MealsToDisplay();
             meals.getMeals().add(newRecipe.getRecipeName());
+
+            meals.setCalories( meals.getCalories() + calories);
+            meals.setCarbs(meals.getCarbs()+carbs);
+            meals.setMinerals(meals.getMinerals()+minerals);
+            meals.setVitamins(meals.getVitamins()+vitamins);
+
             GetSaveData.saveMealsToDisplay(this, meals);
 
             Toast.makeText(this,"Recipe available in meals selections for week menu", Toast.LENGTH_LONG).show();
@@ -125,6 +143,22 @@ public class RecipeActivity extends AppCompatActivity implements ListFrag.Recipe
                 ArrayAdapter adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, ingredients);
                 ingredientListView.setAdapter(adapter);
 
+                if(selectedRecipe.getCalories().isEmpty())
+                    caloriesView.setText("0");
+                else
+                    caloriesView.setText(selectedRecipe.getCalories());
+                if(selectedRecipe.getCarbs().isEmpty())
+                    carbsView.setText("0");
+                else
+                    carbsView.setText(selectedRecipe.getCarbs());
+                if(selectedRecipe.getMinerals().isEmpty())
+                    mineralsView.setText("0");
+                else
+                    mineralsView.setText(selectedRecipe.getMinerals());
+                if(selectedRecipe.getVitamins().isEmpty())
+                    vitView.setText("0");
+                else
+                    vitView.setText(selectedRecipe.getVitamins());
 
                 InputStream inputStream;
                 try {

@@ -10,13 +10,17 @@ import java.util.List;
 
 public class NewRecipe implements Serializable {
 
-    String recipeName, imagePath, directions;
+    String recipeName, imagePath, directions, carbs = "", calories = "", minerals = "", vitamins = "";
     List<String> ingredients;
 
 
     public NewRecipe(){
         recipeName = "";
         imagePath = "";
+        carbs = "";
+        calories = "";
+        minerals = "";
+        vitamins = "";
         ingredients = new ArrayList<>();
     }
 
@@ -39,6 +43,38 @@ public class NewRecipe implements Serializable {
 
     public String getDirections() {
         return directions;
+    }
+
+    public String getCarbs() {
+        return carbs;
+    }
+
+    public void setCarbs(String carbs) {
+        this.carbs = carbs;
+    }
+
+    public String getCalories() {
+        return calories;
+    }
+
+    public void setCalories(String calories) {
+        this.calories = calories;
+    }
+
+    public String getMinerals() {
+        return minerals;
+    }
+
+    public void setMinerals(String minerals) {
+        this.minerals = minerals;
+    }
+
+    public String getVitamins() {
+        return vitamins;
+    }
+
+    public void setVitamins(String vitamins) {
+        this.vitamins = vitamins;
     }
 
     public void setDirections(String directions) {

@@ -22,7 +22,7 @@
             <LinearLayout
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:layout_height="250dp"
+                android:layout_height="150dp"
                 android:id="@+id/ll_recipes_screen"
                 android:orientation="horizontal"
                 android:layout_below="@id/recipe_name_recipes_screen"
@@ -50,6 +50,49 @@
                 android:layout_marginTop="30dp"
                 android:layout_below="@+id/ll_recipes_screen"
                 android:layout_height="wrap_content" />
+
+            <RelativeLayout
+                android:layout_marginTop="15dp"
+                android:id="@+id/relativell_nutirtions"
+                android:layout_below="@id/recipes_screen_directions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/carbs1"
+                    android:hint="Carbs"
+                    android:layout_width="70dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    />
+                <TextView
+                    android:layout_toRightOf="@id/carbs1"
+                    android:id="@+id/calories1"
+                    android:hint="Calorie"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"/>
+                <TextView
+                    android:layout_toRightOf="@id/calories1"
+                    android:id="@+id/minerals1"
+                    android:layout_marginLeft="15dp"
+                    android:hint="Mineral"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"/>
+                <TextView
+                    android:layout_toRightOf="@id/minerals1"
+                    android:id="@+id/vitamins1"
+                    android:layout_marginLeft="15dp"
+                    android:hint="Vitamin"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"/>
+
+
+            </RelativeLayout>
 
         </RelativeLayout>
     </ScrollView>
