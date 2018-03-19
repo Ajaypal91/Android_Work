@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">WhatsForDinner</string>
+    <string name="title_activity_pop_up">PopUp</string>
+    <string name="recipeName">Enter Recipe Name</string>
+    <string name="copyRight">Copyright \u00A9 All rights reserved</string>
+    <string name="databaseFile">savedData.dat</string>
+    <string name="mealsFile">savedMeals.dat</string>
+    <string name="mealsToDisplayFile">savedMealsToDisplay.dat</string>
+    <string name="groceriesFile">groceriesData.dat</string>
+    <string name="addIngredient">Item</string>
+    <string name="duplicateRecipe">Recipe already exists</string>
+    <string name="nullRecipeName">Recipe name cannot be null</string>
+    <string name="OK">OK</string>
+    <string-array name="ingredients">
+        <item>None</item>
+        <item>Tomatos</item>
+        <item>Eggs</item>
+        <item>Flour</item>
+        <item>Chickens</item>
+        <item>Olive Oil</item>
+        <item>Yogurt</item>
+        <item>Beef</item>
+        <item>Potatoes</item>
+        <item>Pork</item>
+    </string-array>
+    <string-array name="units">
+        <item>None</item>
+        <item>Pieces</item>
+        <item>Pieces</item>
+        <item>lbs</item>
+        <item>lbs</item>
+        <item>ounces</item>
+        <item>ounces</item>
+        <item>lbs</item>
+        <item>pieces</item>
+        <item>legs</item>
+    </string-array>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

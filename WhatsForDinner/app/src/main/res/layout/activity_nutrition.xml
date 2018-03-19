@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sjsu.ajay.whatsfordinner.NutritionActivity"
+    android:screenOrientation="portrait">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plan you Nutrition"
+            android:textSize="@dimen/days"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"/>
+
+        <TextView
+            android:layout_below="@+id/header"
+            android:id="@+id/carb_view"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Carbs"
+            android:textSize="@dimen/meals"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="20dp"/>
+
+        <EditText
+            android:layout_below="@+id/header"
+            android:id="@+id/carb_text"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/carb_view"/>
+
+
+        <TextView
+            android:id="@+id/calories_view"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Calories"
+            android:textSize="@dimen/meals"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@+id/carb_text"/>
+
+        <EditText
+            android:id="@+id/calories_text"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/calories_view"
+            android:layout_below="@id/carb_text"/>
+
+
+        <TextView
+            android:id="@+id/minerals_view"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Minerals"
+            android:textSize="@dimen/meals"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/calories_view"/>
+
+        <EditText
+            android:id="@+id/minerals_text"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/minerals_view"
+            android:layout_below="@id/calories_text"/>
+
+
+        <TextView
+            android:id="@+id/vitamins_view"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:text="Vitamins"
+            android:textSize="@dimen/meals"
+            android:layout_marginTop="35dp"
+            android:layout_marginLeft="20dp"
+            android:layout_below="@id/minerals_view"/>
+
+        <EditText
+            android:id="@+id/vitamins_text"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal"
+            android:layout_toRightOf="@+id/minerals_view"
+            android:layout_below="@id/minerals_text"/>
+
+        <Button
+            android:layout_marginTop="30dp"
+            android:background="@color/BLACKCOLOR"
+            android:textColor="@color/WHITECOLOR"
+            android:layout_below="@id/vitamins_text"
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:text="SAVE"
+            android:textSize="@dimen/fab_margin"
+            android:layout_height="wrap_content"
+            android:onClick="saveWeeklyNutrition"/>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

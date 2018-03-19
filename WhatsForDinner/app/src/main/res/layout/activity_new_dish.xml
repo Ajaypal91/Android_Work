@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:configChanges="orientation"
+    android:screenOrientation="portrait"
+    android:layout_height="match_parent"
+    tools:context="edu.sjsu.ajay.whatsfordinner.NewDishActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+
+        <EditText
+            android:id="@+id/recipe_name"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/recipeName"
+            android:maxLength="36"
+            android:textSize="@dimen/hintText"
+            />
+
+        <RelativeLayout
+            android:layout_marginTop="@dimen/fab_margin"
+            android:layout_marginLeft="@dimen/fab_margin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:id="@+id/dish_image"
+                android:layout_alignParentLeft="true"
+                android:layout_width="@dimen/icon_size"
+                android:scaleType="fitCenter"
+                android:layout_height="@dimen/icon_size"
+                android:src="@drawable/burger"/>
+
+
+            <ImageButton
+                android:layout_marginRight="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:background="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/add_image"
+                android:onClick="addImage"/>
+
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/ingredient_linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="@dimen/hintText"
+                    android:text="INGREDIENTS"
+                    android:textAlignment="center"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/colorPrimaryDark"
+                    />
+
+                <AutoCompleteTextView
+                    android:id="@+id/item1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/item2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/item3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/item4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/item5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/item6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/item7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/item8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/item9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+                <AutoCompleteTextView
+                    android:id="@+id/item10"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/addIngredient"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="DIRECTIONS"
+                    android:textAlignment="center"
+                    android:textSize="@dimen/hintText"
+                    android:layout_marginTop="25dp"
+                    android:textColor="@color/colorPrimaryDark"/>
+
+                <EditText
+                    android:id="@+id/directions"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:maxLength="250"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:hint="Enter directions here"
+                    />
+
+                <Button
+                    android:layout_marginTop="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginLeft="100dp"
+                    android:layout_marginRight="100dp"
+                    android:text="SAVE"
+                    android:textSize="25dp"
+                    android:background="@color/colorPrimaryDark"
+                    android:onClick="saveRecipe"
+                    android:layout_marginBottom="15dp"/>
+
+            </LinearLayout>
+
+
+
+        </ScrollView>
+
+
+
+
+
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

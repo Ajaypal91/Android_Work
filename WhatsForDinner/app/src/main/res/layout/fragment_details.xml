@@ -1,0 +1,57 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sjsu.ajay.whatsfordinner.DetailsFragment">
+
+    <ScrollView
+        android:id="@+id/parent_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:id="@+id/recipe_name_recipes_screen"/>
+
+            <LinearLayout
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:id="@+id/ll_recipes_screen"
+                android:orientation="horizontal"
+                android:layout_below="@id/recipe_name_recipes_screen"
+                >
+
+                <ImageView
+                    android:id="@+id/recipes_screen_food_icon"
+                    android:layout_width="@dimen/icon_size"
+                    android:layout_height="@dimen/icon_size"
+                    />
+
+                <ListView
+                    android:layout_marginLeft="14dp"
+                    android:id="@+id/recipes_screen_ingredientsList"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+            <TextView
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
+                android:id="@+id/recipes_screen_directions"
+                android:layout_width="match_parent"
+                android:layout_marginTop="30dp"
+                android:layout_below="@+id/ll_recipes_screen"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</FrameLayout>

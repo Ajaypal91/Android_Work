@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="edu.sjsu.ajay.whatsfordinner.HomeActivity">
+
+    <LinearLayout
+        android:id="@+id/main_linear_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2"
+        >
+
+
+        <ImageView
+            android:id="@+id/Banner"
+            android:layout_width="wrap_content"
+            android:layout_weight="2"
+            android:layout_height="340dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/image1"
+            android:onClick="bannerPopUp"/>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageButton
+                        android:id="@+id/meals_button"
+                        android:layout_height="150dp"
+                        android:layout_width="150dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:theme="@style/Widget.AppCompat.Button.Borderless"
+                        app:srcCompat="@drawable/meals_icon"
+                        android:onClick="mealsClick"/>
+
+                    <ImageButton
+                        android:id="@+id/receipe_button"
+                        android:layout_height="150dp"
+                        android:layout_width="150dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:theme="@style/Widget.AppCompat.Button.Borderless"
+                        app:srcCompat="@drawable/recipes"
+                        android:onClick="receipesClick"/>
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <TextView
+                        android:text="Meals"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
+                        android:onClick="mealsClick"
+                        />
+
+                    <TextView
+                        android:text="Recipes"
+                        android:layout_weight="0.5"
+                        android:textAlignment="center"
+                        android:onClick="receipesClick"/>
+
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    >
+
+                    <ImageButton
+                        android:id="@+id/meals_button3"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_width="150dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:theme="@style/Widget.AppCompat.Button.Borderless"
+                        app:srcCompat="@drawable/groceries"
+                        android:onClick="groceriesClick"/>
+
+                    <ImageButton
+                        android:id="@+id/meals_button4"
+                        android:layout_height="150dp"
+                        android:layout_weight="1"
+                        android:layout_width="150dp"
+                        android:background="@null"
+                        android:scaleType="fitCenter"
+                        android:theme="@style/Widget.AppCompat.Button.Borderless"
+                        app:srcCompat="@drawable/new_dish"
+                        android:onClick="addNewDish"/>
+
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="Groceries"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:onClick="groceriesClick"
+                        />
+
+                    <TextView
+                        android:text="New Dish"
+                        android:layout_weight="1"
+                        android:textAlignment="center"
+                        android:onClick="addNewDish"
+                        />
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+        </ScrollView>
+
+
+    </LinearLayout>
+
+
+</android.support.constraint.ConstraintLayout>
