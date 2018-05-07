@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">FitnessApp</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="r_w">Record Workout</string>
+    <string name="workout_start">Start</string>
+    <string name="workout_stop">Stop</string>
+    <string name="WorkOutDetails">Details</string>
+    <string name="average">AVG</string>
+    <string name="google_map_key">AIzaSyCjl0os2a9uvCBumCqLo0D85H5PGLUwJGw</string>
+    <string name="max">MAX</string>
+    <string name="min">MIN</string>
+    <string name="title_activity_user_profile">UserProfile</string>
+    <string name="avgWkl">Average-Weekly</string>
+    <string name="SharedPreferenceName">FitnessAPP</string>
+</resources>
